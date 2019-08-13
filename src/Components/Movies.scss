@@ -1,0 +1,83 @@
+.btn-main {
+  background: #9352b3;
+  color: #fff;
+  &:hover {
+    filter: brightness(113%);
+    color: #fff;
+  }
+}
+
+.btn {
+  padding: 0 15px;
+  position: relative;
+  line-height: 35px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.movie-wrapper {
+  padding-top: 80px;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+.card-body {
+  position: relative;
+  padding-top: 2.5rem;
+}
+.card-addon {
+  position: absolute;
+  top: -30px;
+  right: 30px;
+
+  .watched-tag {
+    position: absolute;
+    left: 16px;
+    top: -45px;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+    padding: 3px 5px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+  }
+}
+
+.play-btn {
+  cursor: pointer;
+  box-shadow: 0 10px 30px 0 rgba(147, 82, 179, 0.7);
+  background: #9352b3;
+  position: relative;
+  display: block;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: #fff !important;
+    transform: scale(1.05);
+  }
+}
+
+.category {
+  font-size: 0.8rem;
+  float: right;
+}
+
+.rating {
+  font-size: 0.8rem;
+
+  .fa-star {
+    color: #ffc741;
+  }
+}
