@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { PageTitle } from "../Header/PageTitle";
 import { MovieService } from "../../Services/MovieService";
-import { MovieSearchService } from '../../Services/MovieSearchService'
+import { MovieSearchService } from "../../Services/MovieSearchService";
 import { Movies } from "../Movies";
 import Paginater from "../Paginater";
 
@@ -19,23 +19,23 @@ export class Home extends Component {
       currentPage: props.match.params.page ? props.match.params.page : 1,
       queryString: ""
     };
-    console.dir(props);
   }
 
   componentDidMount() {
-      let queryString = this.props.location.search;
-      console.dir(queryString);
+    let queryString = this.props.location.search;
     if (queryString && queryString != "?query=") {
-        this.setState({
-            queryString: queryString
+      this.setState({
+        queryString: queryString
+      });
+      this.movieSearchService
+        .search(queryString, this.state.currentPage)
+        .then(data => {
+          var totalPage = data.total_pages;
+          this.setState({
+            totalPage: totalPage
           });
-          this.movieSearchService.search(queryString, this.state.currentPage).then(data => {
-            var totalPage = data.total_pages;
-            this.setState({
-              totalPage: totalPage
-            });
-            this.getMovieDetails(data.results);
-          });
+          this.getMovieDetails(data.results);
+        });
     } else {
       this.movieService.getPopular(this.state.currentPage).then(data => {
         var totalPage = data.total_pages;

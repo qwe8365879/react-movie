@@ -1,9 +1,10 @@
 class ErrorHandleService {
     handleResponseError(response) {
-        throw new Error("HTTP error, status = " + response.status);
+        console.error(response.json());
+        throw new Error("HTTP error, status = " + response.status + " error message: " );
     }
     handleError(error) {
-        console.error(error.message);
+        console.error(error);
     }
   }
   export default ErrorHandleService;
