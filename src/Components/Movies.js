@@ -93,9 +93,7 @@ export class Movies extends Component {
               </Col>
             ))
           ):(
-            <Spinner animation="border" role="status">
-              <span className="sr-only">Loading...</span>
-            </Spinner>
+            <h3>No Results</h3>
           )}
         </Row>
       </div>

@@ -39,7 +39,7 @@ export class Home extends Component {
     } else {
       this.movieService.getPopular(this.state.currentPage).then(data => {
         var totalPage = data.total_pages;
-        if (totalPage > 3) totalPage = 3;
+        // if (totalPage > 3) totalPage = 3;
         this.setState({
           totalPage: totalPage
         });
